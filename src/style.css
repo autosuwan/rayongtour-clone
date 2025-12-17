@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  * {
+    font-family: "Kanit", sans-serif;
+  }
+}
+
+@theme {
+  --color-primary: #3291B6;
+  --color-secondary: #BB8ED0;
+  --color-3rd: #E0A8A8;
+  --text-xxl: 10rem;
+  --font-kanit: "Kanit", sans-serif;
+}
+
+.hero-text {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Menu Fade Animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-dropdown {
+  animation: fadeDown 0.3s ease-out;
+}
