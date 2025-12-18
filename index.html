@@ -1,20 +1,352 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>lab-tailwind</title>
-        <link href="src/style.css" rel="stylesheet" />
-    </head>
-    <body class="p-4">
-        <h1 class="text-xxl text-primary bg-3rd">Hello Tailwind</h1>
-        <button class="text-xl px-2 m-8 text-white bg-secondary shadow-2xl rounded-sm">
-            สวัสดี CS441
-        </button>
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>ระยองทัวร์</title>
+    <link rel="icon" type="image/png" href="/images/Logo-Rayongtour.png" />
+</head>
+
+<body class="bg-white">
+    <!-- Header -->
+    <header class="w-full glass-nav border-b-2 border-[#EEEEEE] shadow-lg fixed top-0 z-50">
+        <!-- Hidden Checkbox for Mobile Menu Toggle -->
+        <input type="checkbox" id="mobile-menu" class="hidden peer">
+
+        <div class="flex justify-between items-center pb-5 pt-5 px-4 md:px-6">
+            <!-- Logo -->
+            <div class="w-[80px] md:w-[100px]">
+                <img src="/images/Logo-Rayongtour.png" alt="rayongtour" class="w-full h-auto" />
+            </div>
+
+            <!-- Desktop Menu (ซ่อนบนมือถือ) -->
+            <nav class="hidden md:flex flex-row items-center gap-8 lg:gap-10">
+                <div class="cursor-pointer font-medium text-[#3396D3] hover:text-[#FF6000] transition-colors">จองตั๋ว
+                </div>
+                <div class="cursor-pointer font-medium text-[#3396D3] hover:text-[#FF6000] transition-colors">
+                    แหล่งท่องเที่ยวระยอง</div>
+                <div class="cursor-pointer font-medium text-[#3396D3] hover:text-[#FF6000] transition-colors">ติดต่อเรา
+                </div>
+                <div
+                    class="cursor-pointer font-medium text-[#3396D3] border-2 border-[#3396D3] rounded-full px-6 py-2 hover:text-[#FFFFFF] hover:border-[#FF6000] hover:bg-[#FF6000] transition-all hover:shadow-md">
+                    เข้าสู่ระบบ</div>
+            </nav>
+
+            <!-- Hamburger Button (แสดงเฉพาะบนมือถือ) -->
+            <label for="mobile-menu"
+                class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
+                <span class="w-6 h-0.5 bg-[#3396D3] rounded-full transition-all"></span>
+                <span class="w-6 h-0.5 bg-[#3396D3] rounded-full transition-all"></span>
+                <span class="w-6 h-0.5 bg-[#3396D3] rounded-full transition-all"></span>
+            </label>
+        </div>
+
+        <!-- Mobile Menu Dropdown (แสดงเมื่อ checkbox ถูก checked) -->
+        <nav
+            class="mobile-menu-dropdown hidden peer-checked:block md:hidden absolute left-0 right-0 top-full bg-white border-t-2 border-[#EEEEEE] shadow-xl transition-all">
+            <div class="flex flex-col px-6 py-4 gap-1">
+                <div
+                    class="cursor-pointer font-medium text-[#3396D3] hover:text-[#FF6000] hover:bg-[#F8F9FA] py-3 px-4 rounded-lg transition-all">
+                    จองตั๋ว</div>
+                <div
+                    class="cursor-pointer font-medium text-[#3396D3] hover:text-[#FF6000] hover:bg-[#F8F9FA] py-3 px-4 rounded-lg transition-all">
+                    แหล่งท่องเที่ยวระยอง</div>
+                <div
+                    class="cursor-pointer font-medium text-[#3396D3] hover:text-[#FF6000] hover:bg-[#F8F9FA] py-3 px-4 rounded-lg transition-all">
+                    ติดต่อเรา</div>
+                <div class="mt-3 mb-2">
+                    <div
+                        class="cursor-pointer font-medium text-[#3396D3] border-2 border-[#3396D3] rounded-full px-6 py-3 hover:text-[#FF6000] hover:border-[#FF6000] text-center transition-all hover:shadow-md">
+                        เข้าสู่ระบบ</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-[url('/images/bg.jpg')] h-screen">
+        <div class="bg-black/45 h-screen">
+            <div class="flex flex-col hero-text pt-50 md:pt-60 gap-4 items-center">
+                <div class="bg-[#FF6000] rounded-full px-5 py-1 text-white text-center text-sm w-fit animate-float">ขนส่งอันดับ 1
+                    ในระยอง</div>
+                <div class="text-5xl md:text-7xl text-white text-center">ระยองทัวร์</div>
+                <div class="text-sm md:text-md text-light text-white text-center">บริการรถตู้และมินิบัสมาตรฐาน VIP
+                    เบาะกว้าง นั่งสบาย ขับขี่ปลอดภัย ใส่ใจทุกการ</div>
+            </div>
+            <!-- Form Bus -->
+            <div
+                class="flex justify-center items-center pt-20 md:pt-60 md:pb-20 pb-5 overflow-hidden md:overflow-visible">
+                <div
+                    class="flex flex-col bg-white/95 w-[90%] md:w-[70%] rounded-2xl md:rounded-3xl p-5 md:p-10 shadow-lg gap-4 z-5 relative animate-bus-drive">
+
+                    <!-- Form Header -->
+                    <div class="flex items-center gap-3">
+                        <div class="bg-[#3396D3] p-2 rounded-full text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bus-front-icon lucide-bus-front">
+                                <path d="M4 6 2 7" />
+                                <path d="M10 6h4" />
+                                <path d="m22 7-2-1" />
+                                <rect width="16" height="16" x="4" y="3" rx="2" />
+                                <path d="M4 11h16" />
+                                <path d="M8 15h.01" />
+                                <path d="M16 15h.01" />
+                                <path d="M6 19v2" />
+                                <path d="M18 21v-2" />
+                            </svg>
+                        </div>
+                        <div class="text-xl md:text-2xl font-bold text-gray-800">ค้นหาเที่ยวรถ</div>
+                    </div>
+                    <form class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                        <div class="space-y-2">
+                            <label class="text-sm md:text-md text-[#434343]">ต้นทาง</label>
+                            <div class="relative">
+                                <svg class="absolute left-3 top-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#616161"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-map-pin-icon lucide-map-pin">
+                                    <path
+                                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <select
+                                    class="text-sm w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-[#3396D3] focus:ring-2 focus:ring-[#3396D3]/20 outline-none appearance-none bg-white cursor-pointer">
+                                    <option>กรุงเทพฯ (เอกมัย)</option>
+                                    <option>กรุงเทพฯ (หมอชิต)</option>
+                                    <option>ระยอง (บขส.ใหม่)</option>
+                                    <option>บ้านเพ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm md:text-md text-[#434343]">ปลายทาง</label>
+                            <div class="relative">
+                                <svg class="absolute left-3 top-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#616161"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-map-pin-house-icon lucide-map-pin-house">
+                                    <path
+                                        d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z" />
+                                    <path
+                                        d="M18 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 .601.2" />
+                                    <path d="M18 22v-3" />
+                                    <circle cx="10" cy="10" r="3" />
+                                </svg>
+                                <select
+                                    class="text-sm w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-[#3396D3] focus:ring-2 focus:ring-[#3396D3]/20 outline-none appearance-none bg-white cursor-pointer">
+                                    <option>ระยอง (บขส.ใหม่)</option>
+                                    <option>บ้านเพ</option>
+                                    <option>กรุงเทพ (หมอชิต)</option>
+                                    <option>กรุงเทพ (เอกมัย)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm md:text-md text-[#434343]">วันที่เดินทาง</label>
+                            <div class="relative">
+                                <svg class="absolute left-3 top-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#616161"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-calendar1-icon lucide-calendar-1">
+                                    <path d="M11 14h1v4" />
+                                    <path d="M16 2v4" />
+                                    <path d="M3 10h18" />
+                                    <path d="M8 2v4" />
+                                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                                </svg>
+                                <input type="date"
+                                    class="text-sm w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-[#3396D3] focus:ring-2 focus:ring-[#3396D3]/20 outline-none appearance-none bg-white cursor-pointer">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="hidden md:block text-md opacity-0">ค้นหา</label>
+                            <div class="relative">
+                                <svg class="absolute left-3 top-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg"
+                                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-search-icon lucide-search">
+                                    <path d="m21 21-4.34-4.34" />
+                                    <circle cx="11" cy="11" r="8" />
+                                </svg>
+                                <button type="button"
+                                    class="text-sm cursor-pointer w-full py-3 pr-8 rounded-lg bg-[#FF6000] border-1 border-[#FF6000] hover:bg-[#E55500] transition-colors">
+                                    <span class="text-white">ค้นหา</span>
+                                </button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white relative bottom-0 left-0 right-0 md:h-[10%]"></div>
+    <!-- Tour Section -->
+    </section>
+
+    <!-- Tour Section -->
+    <section class="min-h-screen bg-white">
+        <div class="flex flex-col">
+            <div class="flex flex-col justify-center items-center relative md:top-20 top-23 gap-5">
+                <div class="text-4xl font-semibold md:text-5xl text-black text-center">จุดรับ-ส่งยอดนิยม</div>
+                <div class="text-md font-light text-black/50 text-center">จุดรับ-ส่งยอดนิยมที่ลูกค้าไว้ใจใช้บริการระยองทัวร์ของเรา
+                </div>
+            </div>
+            <!-- Card Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 px-15 md:px-30 pt-33 gap-5 md:gap-10 w-full mb-5 md:mb-10">
+                <!-- Card 1: สำนักงานระยองทัวร์ -->
+                <div class="reveal-on-scroll flex flex-col bg-[url('/images/rayongtour-main.png')] bg-center bg-cover rounded-2xl h-[400px] md:h-[500px] shadow-xl overflow-hidden group/card hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-full h-full bg-black/50 flex flex-col justify-end pb-10 group-hover/card:bg-black/40 transition-all">
+                        <div class="pt-10 px-6 flex flex-col gap-1">
+                            <div class="text-2xl font-semibold text-white">สำนักงานระยองทัวร์</div>
+                            <div class="bg-[#3396D3] w-50 h-[2px]"></div>
+                            <div class="text-md text-white/95 font-light pb-10">ใจกลางเมืองระยอง ติดกับตลาดสตาร์ไนท์พลาซ่า เดินทางต่อสะดวกสบาย</div>
+                            <div class="flex justify-center">
+                                <button class="relative bg-[#3396D3] text-white md:font-medium text-[15px] md:text-[17px] w-full px-4 py-2 md:px-6 md:py-3 rounded-xl flex items-center overflow-hidden cursor-pointer group w-fit shadow-lg hover:shadow-[#3396D3]/50 transition-all">
+                                    <span class="mr-8">ดูโลเคชั่น</span>
+                                    <div class="absolute right-1 bg-white md:h-10 md:w-10 h-8 w-8 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:w-[calc(100%-8px)]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3396D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                                    </div>
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: กรุงเทพ (หมอชิต 2) -->
+                <div class="reveal-on-scroll flex flex-col bg-[url('/images/mochit.jpg')] bg-center bg-cover rounded-2xl h-[400px] md:h-[500px] shadow-xl overflow-hidden group/card hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-full h-full bg-black/50 flex flex-col justify-end pb-10 group-hover/card:bg-black/40 transition-all">
+                        <div class="pt-10 px-6 flex flex-col gap-1">
+                            <div class="text-2xl font-semibold text-white">กรุงเทพ (หมอชิต 2)</div>
+                            <div class="bg-[#FF6000] w-50 h-[2px]"></div>
+                            <div class="text-md text-white/95 font-light pb-10">สถานีขนส่งผู้โดยสารกรุงเทพฯ (จตุจักร) จุดเชื่อมต่อการเดินทางทั่วไทย</div>
+                            <div class="flex justify-center">
+                                <button class="relative bg-[#FF6000] text-white md:font-medium text-[15px] md:text-[17px] w-full md:px-6 md:py-3 py-2 px-4 rounded-xl flex items-center overflow-hidden cursor-pointer group w-fit shadow-lg hover:shadow-[#FF6000]/50 transition-all">
+                                    <span class="mr-8">ดูโลเคชั่น</span>
+                                    <div class="absolute right-1 bg-white md:h-10 md:w-10 h-8 w-8 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:w-[calc(100%-8px)]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                                    </div>
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: กรุงเทพ (เอกมัย) -->
+                <div class="reveal-on-scroll flex flex-col bg-[url('/images/ekmai.jpg')] bg-center bg-cover rounded-2xl h-[400px] md:h-[500px] shadow-xl overflow-hidden group/card hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-full h-full bg-black/50 flex flex-col justify-end pb-10 group-hover/card:bg-black/40 transition-all">
+                        <div class="pt-10 px-6 flex flex-col gap-1">
+                            <div class="text-2xl font-semibold text-white">กรุงเทพ (เอกมัย)</div>
+                            <div class="bg-[#3396D3] w-50 h-[2px]"></div>
+                            <div class="text-md text-white/95 font-light pb-10">สถานีขนส่งสายตะวันออก ใกล้ BTS เดินทางสะดวกสบาย</div>
+                            <div class="flex justify-center">
+                                <button class="relative bg-[#3396D3] text-white md:font-medium text-[15px] md:text-[17px] w-full md:px-6 md:py-3 py-2 px-4 rounded-xl flex items-center overflow-hidden cursor-pointer group w-fit shadow-lg hover:shadow-[#3396D3]/50 transition-all">
+                                    <span class="mr-8">ดูโลเคชั่น</span>
+                                    <div class="absolute right-1 bg-white md:h-10 md:w-10 h-8 w-8 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:w-[calc(100%-8px)]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3396D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                                    </div>
+                                </button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-end justify-center md:justify-end md:pr-30 pb-20">
+                <button class="relative bg-[#3396D3] text-white font-medium text-[17px] px-6 py-3 rounded-xl flex items-center overflow-hidden cursor-pointer group w-fit shadow-lg hover:shadow-[#3396D3]/50 transition-all">
+                    ดูจุดรับ-ส่งเพิ่มเติม
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-primary overflow-hidden relative">
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary/5 rounded-full -ml-40 -mb-40 blur-3xl"></div>
         
-        <button class="font-thai text-xl px-2 m-8 text-white bg-secondary shadow-2xl rounded-sm">
-            สวัสดี CS441
-        </button>
-    </body>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="rounded-[2.5rem] p-8 md:p-16 text-center">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-inner">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-normal text-white mb-4 tracking-tight">รับข้อมูลก่อนใคร</h2>
+                <p class="text-white/80 text-lg mb-10 font-light max-w-xl mx-auto">ลงชื่อเพื่อรับข่าวสาร และข้อมูลเส้นทางเดินรถใหม่ๆ ส่งตรงถึงอีเมลคุณ</p>
+                
+                <form class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+                    <div class="flex-grow relative group">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </span>
+                        <input type="email" placeholder="กรอกอีเมลของคุณ" class="w-full pl-12 pr-6 md:py-4 py-3 rounded-2xl bg-white border-none focus:ring-4 focus:ring-secondary/50 outline-none text-slate-800 font-medium placeholder:text-slate-400 transition-all shadow-lg">
+                    </div>
+                    <button type="button" class="bg-[#FF6000] text-white py-2 md:px-10 md:py-4 rounded-2xl font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-xl">
+                        สมัครสมาชิก
+                    </button>
+                </form>
+                <p class="mt-6 text-white/60 text-sm">* ข้อมูลของคุณจะถูกเก็บเป็นความลับและสามารถยกเลิกการรับข่าวสารได้ตลอดเวลา</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white pt-20 pb-10 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-10 md:px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center shadow-lg">
+                            <img src="/images/Logo-Rayongtour.png">
+                        </div>
+                        <span class="text-2xl font-medium text-white">ระยองทัวร์</span>
+                    </div>
+                    <p class="text-slate-400 font-light leading-relaxed">ผู้เชี่ยวชาญด้านการเดินทางระยอง-กรุงเทพฯ ด้วยประสบการณ์กว่าหลายสิบปี มั่นใจ ปลอดภัย ทุกเส้นทาง</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-medium mb-6 text-white border-l-4 border-primary pl-3">บริการ</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">จองตั๋วออนไลน์</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">เช็คสถานะรถ</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">โปรโมชั่น</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">คำถามที่พบบ่อย</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-medium mb-6 text-white border-l-4 border-secondary pl-3">ติดต่อเรา</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-primary shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>081-xxxxxxx (ระยอง)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-primary shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>สายสตาร์ระยอง ใกล้ตลาดสตาร์</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-medium mb-6 text-white border-l-4 border-primary pl-3">ติดตามเรา</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-900 text-center text-slate-500 text-sm">
+                &copy; 2024 Rayong Tour Service. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
