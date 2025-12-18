@@ -73,11 +73,7 @@
   transform: rotate(-45deg) translateY(-11px);
 }
 
-.glass-nav {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+
 
 /* Float Animation */
 @keyframes float {
