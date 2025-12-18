@@ -8,8 +8,8 @@
 }
 
 @theme {
-  --color-primary: #3291B6;
-  --color-secondary: #BB8ED0;
+  --color-primary: #3396D3;
+  --color-secondary: #F8F9FA;
   --color-3rd: #E0A8A8;
   --text-xxl: 10rem;
   --font-kanit: "Kanit", sans-serif;
@@ -42,4 +42,68 @@
 
 .mobile-menu-dropdown {
   animation: fadeDown 0.3s ease-out;
+}
+
+/* Bus Animation */
+@keyframes driveIn {
+  from {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-bus-drive {
+  animation: driveIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Hamburger Menu Animation */
+#mobile-menu:checked ~ div label span:nth-child(1) {
+  transform: rotate(45deg) translateY(11px);
+}
+
+#mobile-menu:checked ~ div label span:nth-child(2) {
+  opacity: 0;
+}
+
+#mobile-menu:checked ~ div label span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-11px);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Float Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scroll Reveal Animation (Pure CSS) */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-on-scroll {
+  animation: slideUp linear both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 35%;
 }
